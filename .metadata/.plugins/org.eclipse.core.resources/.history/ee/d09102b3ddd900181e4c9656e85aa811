@@ -1,0 +1,5 @@
+package websocketServer;
+
+public class OutputMessage {
+
+}
