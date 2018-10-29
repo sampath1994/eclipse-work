@@ -30,11 +30,13 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="E:\new client"/>
 			<item value="E:\webSockets\spring-websocket-client-master"/>
 			<item value="E:\webSockets\spring-websocket-server-master"/>
 			<item value="C:\Users\promod\eclipse-workspace\FXfirstProject"/>
 		</list>
 		<list key="projectNameTemplate">
+			<item value="[sam]"/>
 			<item value="[artifactId]"/>
 			<item value="[artifactId]-TRUNK"/>
 			<item value="[artifactId]-[version]"/>

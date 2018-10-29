@@ -18,6 +18,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TreeTableView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
@@ -99,6 +100,10 @@ public class MyController implements Initializable{
 	            stage.show();
 	            // Hide this current window (if this is what you want)
 	            //((Node)(event.getSource())).getScene().getWindow().hide();
+	            
+	          /*  TreeTableView<String> treeTableView = new TreeTableView<String>();
+	            treeTableView.getSelectionModel().;*/
+	            
 	        }
 	        catch (IOException e) {
 	            e.printStackTrace();

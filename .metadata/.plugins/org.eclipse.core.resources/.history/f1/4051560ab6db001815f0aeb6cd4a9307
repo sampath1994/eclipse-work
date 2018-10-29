@@ -1,0 +1,19 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class equalCheck {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 Map<String,line> map = new HashMap<String,line>();
+		    map.put("key1", new line("A","sam"));
+		    map.put("key2", new line("B","pro"));
+		    map.put("key3", new line("C","elv"));
+		    Map<String,line> map2 = new HashMap<String,line>();
+		    map2.put("key2", new line("B","pro"));
+		    map2.put("key1", new line("A","sam"));
+		    map2.put("key3", new line("C","elv"));
+		    System.out.println(map.equals(map2));
+	}
+
+}

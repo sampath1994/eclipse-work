@@ -1,0 +1,11 @@
+
+public class line {
+  private String status;
+  private String content;
+public line(String status, String content) {
+	this.status = status;
+	this.content = content;
+}
+  
+  
+}
