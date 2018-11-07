@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="453.0" prefWidth="715.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.newController">
+   <children>
+      <TextField fx:id="username" layoutX="304.0" layoutY="77.0" />
+      <ComboBox fx:id="branch" layoutX="341.0" layoutY="280.0" prefWidth="150.0" />
+      <TextField fx:id="url" layoutX="304.0" layoutY="212.0" />
+      <Label layoutX="137.0" layoutY="83.0" text="Username" />
+      <Label layoutX="137.0" layoutY="150.0" prefHeight="27.0" prefWidth="80.0" text="Password" />
+      <Label layoutX="137.0" layoutY="218.0" prefHeight="27.0" prefWidth="118.0" text="Remote URL" />
+      <PasswordField fx:id="password" layoutX="304.0" layoutY="144.0" />
+      <Label layoutX="137.0" layoutY="286.0" text="Branch" />
+      <Button layoutX="312.0" layoutY="374.0" mnemonicParsing="false" onAction="#save" prefHeight="39.0" prefWidth="106.0" text="Save" />
+      <Button layoutX="445.0" layoutY="374.0" mnemonicParsing="false" onAction="#cancel" prefHeight="39.0" prefWidth="106.0" text="Cancel" />
+   </children>
+</AnchorPane>
+
+
+package application;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+
+public class newController implements Initializable {
+
+	@FXML
+	private TextField username;
+	
+	@FXML
+	private PasswordField password;
+	
+	@FXML
+	private TextField url;
+	
+	@FXML
+	private ComboBox<String> branch;
+	
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		// TODO Auto-generated method stub
+     username.setText("sam");
+     password.setText("123");
+     branch.getItems().add("master");
+     branch.getItems().add("slave");
+	}
+	
+public void save() {
+		System.out.println("save");
+	}
+
+	public void cancel() {
+		System.out.println("cancel");
+	}
+
+}
