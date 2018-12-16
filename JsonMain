@@ -1,0 +1,52 @@
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.stream.Stream;
+
+import org.json.JSONObject;
+import org.json.XML;
+import org.xml.sax.ContentHandler;
+
+import net.javacrumbs.json2xml.JsonSaxAdapter;
+
+public class XmlTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String str = readLineByLineJava8("C:\\Users\\promod\\Desktop\\test.json");
+		JSONObject json = new JSONObject(str);
+		
+		TreeItemCreationContentHandler chr = new TreeItemCreationContentHandler();
+		
+		ContentHandler ch = chr ;
+		JsonSaxAdapter adapter = new JsonSaxAdapter(str, ch);
+		adapter.parse();
+		
+		/*String xml = XML.toString(json, "sam");
+		 
+		//System.out.println(XML.toJSONObject(xml).toString());
+		System.out.println(xml);*/
+	}
+	
+	private static String readLineByLineJava8(String filePath)
+	{
+	    StringBuilder contentBuilder = new StringBuilder();
+	    //////////////////////////////////////
+	    contentBuilder.append("{\"root\":");
+	    
+	    //////////////////////////////////////
+	    try (Stream<String> stream = Files.lines( Paths.get(filePath), StandardCharsets.UTF_8))
+	    {
+	        stream.forEach(s -> contentBuilder.append(s).append("\n"));
+	    }
+	    catch (IOException e)
+	    {
+	        e.printStackTrace();
+	    }
+	    contentBuilder.append("}");
+	    return contentBuilder.toString();
+	}
+
+}
